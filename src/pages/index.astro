@@ -16,7 +16,9 @@ import StoreFront from "~/assets/unnamed.webp";
 import MenuClassicDeli from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(1).jpeg";
 import MenuGourmetSandwiches from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(2).jpeg";
 import MenuBreakfast from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(3).jpeg";
-import MenuBurgers from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am.jpeg";
+import MenuBurgers from "~/assets/images/0a8605ea9cf616f8973259d3524871cfa61bb821.jpg";
+import SoupSandwich from "~/assets/images/544d89c97d0c97f0270ddf3662eeed349ee41526.jpg";
+import Salad from "~/assets/images/edc4493a995c53ad8e7657166f3df2c30ec40c71.jpg";
 
 import { cateringInfo } from "~/data/config";
 ---
@@ -95,8 +97,13 @@ import { cateringInfo } from "~/data/config";
 		<Grid>
 			<div slot="grid-content-1">
 				<div class="flex flex-col items-center text-center">
-					<div class="w-full h-64 bg-gradient-to-br from-brand-yellow/20 to-brand-gold/20 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-						<span class="text-8xl">🥪</span>
+					<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Picture
+							src={SoupSandwich}
+							alt="Grilled cheese sandwich with soup"
+							formats={["avif", "webp"]}
+							class="w-full h-full object-cover"
+						/>
 					</div>
 					<h3 class="h4 mt-0 font-black text-brand-dark">Savoury Sandwiches</h3>
 					<p class="text-gray-600 text-lg px-4">
@@ -108,8 +115,13 @@ import { cateringInfo } from "~/data/config";
 
 			<div slot="grid-content-2">
 				<div class="flex flex-col items-center text-center">
-					<div class="w-full h-64 bg-gradient-to-br from-brand-rust/20 to-brand-brown/20 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-						<span class="text-8xl">🍲</span>
+					<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Picture
+							src={SoupSandwich}
+							alt="Hearty homemade soup"
+							formats={["avif", "webp"]}
+							class="w-full h-full object-cover"
+						/>
 					</div>
 					<h3 class="h4 mt-0 font-black text-brand-dark">Hearty Soups</h3>
 					<p class="text-gray-600 text-lg px-4">
@@ -121,8 +133,13 @@ import { cateringInfo } from "~/data/config";
 
 			<div slot="grid-content-3">
 				<div class="flex flex-col items-center text-center">
-					<div class="w-full h-64 bg-gradient-to-br from-brand-green/20 to-emerald-200/40 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-						<span class="text-8xl">🥗</span>
+					<div class="w-full h-64 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<Picture
+							src={Salad}
+							alt="Fresh gourmet salad"
+							formats={["avif", "webp"]}
+							class="w-full h-full object-cover"
+						/>
 					</div>
 					<h3 class="h4 mt-0 font-black text-brand-dark">Fresh Salads</h3>
 					<p class="text-gray-600 text-lg px-4">
