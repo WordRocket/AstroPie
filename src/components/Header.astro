@@ -1,9 +1,11 @@
 ---
 import { menuMain } from "~/data/menus.js";
+import { Image } from "astro:assets";
+import Logo from "~/assets/logo copy.png";
 
 const rmTrailingSlash = (path: string): string => {
-  return path.endsWith("/") && path.length > 1 
-    ? path.slice(0, path.length - 1) 
+  return path.endsWith("/") && path.length > 1
+    ? path.slice(0, path.length - 1)
     : path;
 }
 
@@ -14,7 +16,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 	<div class="container py-6">
 		<nav class="flex items-center justify-between" aria-label="Global">
 			<a href="/" class="-m-1.5 p-1.5">
-				<p class="font-bold text-4xl text-brand-green">Astro<span class="text-brand-red bg-brand-red/5 px-3 ml-1 rounded-lg">Pie</span></p>
+				<Image src={Logo} alt="Gourmet Deli & Catering Company" width={200} height={80} class="h-16 w-auto" />
 			</a>
 			<div class="flex lg:hidden">
 				<button
@@ -66,7 +68,7 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 			>
 				<div class="flex items-center justify-between">
 					<a href="/" class="-m-1.5 p-1.5">
-						<p class="font-bold text-4xl text-brand-green">Astro<span class="text-brand-red">Pie</span></p>
+						<Image src={Logo} alt="Gourmet Deli & Catering Company" width={200} height={80} class="h-16 w-auto" />
 					</a>
 					<button type="button" class="-m-2.5 p-2.5 text-brand-red" @click="open = false">
 						<span class="sr-only">Close menu</span>

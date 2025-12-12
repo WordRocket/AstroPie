@@ -11,7 +11,8 @@ import Heading from "~/components/Heading.astro";
 import WideImage from "~/components/WideImage.astro";
 
 // Images
-import Logo from "~/assets/images/whatsapp_image_2025-12-12_at_11.12.35_am.jpeg";
+import SuperBurger from "~/assets/images/b7cb96e9-8432-4c38-8749-d10453fab697.jpeg";
+import ReubenBurger from "~/assets/images/whatsapp_image_2025-12-12_at_11.13.28_am_(1).jpeg";
 import MenuClassicDeli from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(1).jpeg";
 import MenuGourmetSandwiches from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(2).jpeg";
 import MenuBreakfast from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(3).jpeg";
@@ -69,11 +70,11 @@ import { cateringInfo } from "~/data/config";
 			</div>
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto rounded-2xl shadow-2xl"}
-					src={Logo}
+					class:list={"mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300"}
+					src={SuperBurger}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="Gourmet Deli & Catering Company Logo"
+					alt="Delicious Gourmet Superburger"
 					loading={"eager"}
 					fetchpriority={"high"}
 				/>
@@ -299,18 +300,18 @@ import { cateringInfo } from "~/data/config";
 	<Section class:list={"bg-white"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none order-2">
-				<Badge title="🥖 Classic Deli" />
-				<h2 class="font-black text-brand-dark h2 !my-4">Traditional & Gourmet Sandwiches</h2>
+				<Badge title="🥪 Signature Creations" />
+				<h2 class="font-black text-brand-dark h2 !my-4">Our Famous Reuben</h2>
 				<div>
 					<p class="text-lg text-gray-700">
-						Choose from our extensive selection of classic deli favorites and innovative gourmet creations.
-						From the Brooklyn Hoagie with black forest ham to the Mediterranean with bruschetta and feta,
-						every sandwich is a masterpiece.
+						Experience one of our most popular creations - the Reuben Burger featuring tender corned beef,
+						melted Swiss cheese, tangy sauerkraut, and our house-made Russian dressing on a perfectly toasted bun.
+						It's a flavor combination that keeps customers coming back.
 					</p>
 
 					<p class="text-lg text-gray-700">
+						From classic deli favorites to innovative gourmet creations, every sandwich is crafted with care.
 						We offer options for every dietary preference including vegetarian, vegan, and gluten-free choices.
-						Each sandwich is made to order ensuring the freshest, most delicious experience possible.
 					</p>
 
 					<div class="mt-8 not-prose">
@@ -323,11 +324,11 @@ import { cateringInfo } from "~/data/config";
 
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto rounded-2xl shadow-xl"}
-					src={MenuClassicDeli}
+					class:list={"mx-auto rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"}
+					src={ReubenBurger}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="Classic Deli Sandwich Menu"
+					alt="Signature Reuben Burger"
 				/>
 			</div>
 		</Hero>
