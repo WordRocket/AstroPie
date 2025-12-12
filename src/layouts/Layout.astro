@@ -5,7 +5,11 @@ import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 const { pageTitle, title, description } = Astro.props;
 const baseUrl = `${Astro.url.protocol}//${Astro.url.host}`;
-import { siteLang, themeColor } from "~/data/config";
+import { siteLang, themeColor, siteName } from "~/data/config";
+
+const seoTitle = title || siteName;
+const seoDescription = description || "Experience the finest gourmet sandwiches, hearty soups, and fresh salads at Gourmet Deli & Catering Company. Full-service catering available.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -14,10 +18,14 @@ import { siteLang, themeColor } from "~/data/config";
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content={themeColor} />
-		<meta name="description" content={description} />
+		<title>{pageTitle}</title>
+		<meta name="description" content={seoDescription} />
+		<link rel="canonical" href={canonicalURL} />
 		<meta name="robots" content="index,follow" />
 		<meta name="googlebot" content="index,follow" />
 		<link rel="author" href="humans.txt" />
+
+		<meta name="keywords" content="gourmet deli, catering, sandwiches, soups, salads, burgers, breakfast, Ontario, fresh food, made to order" />
 
 		<!-- <link
 			rel="apple-touch-icon"
@@ -44,20 +52,37 @@ import { siteLang, themeColor } from "~/data/config";
 		/> -->
 		<meta name="msapplication-TileColor" content="#ffffff" />
 
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
-		<meta property="og:image" content={`${baseUrl}/images/og-image.jpg`} />
-		<meta property="og:description" content={description} />
-		<meta property="og:site_name" content="WP Infusion" />
+		<meta property="og:title" content={seoTitle} />
+		<meta property="og:description" content={seoDescription} />
+		<meta property="og:site_name" content={siteName} />
 		<meta property="og:locale" content={siteLang} />
 
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:url" content={Astro.url} />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<!-- <meta name="twitter:image" content={`${baseUrl}/images/og-image.jpg`} /> -->
-		<title>{pageTitle}</title>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={seoTitle} />
+		<meta name="twitter:description" content={seoDescription} />
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Restaurant",
+			"name": "Gourmet Deli & Catering Company",
+			"description": "Experience the finest gourmet sandwiches, hearty soups, and fresh salads. Full-service catering available.",
+			"servesCuisine": "Deli, American, International",
+			"priceRange": "$$",
+			"telephone": "+1-519-204-7252",
+			"address": {
+				"@type": "PostalAddress",
+				"addressRegion": "Ontario",
+				"addressCountry": "Canada"
+			},
+			"openingHours": "Mo-Su",
+			"menu": "/menu",
+			"acceptsReservations": "False"
+		}
+		</script>
 		<ClientRouter />
 	</head>
 	<body>

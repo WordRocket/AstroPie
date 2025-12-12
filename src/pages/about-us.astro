@@ -9,23 +9,22 @@ import ButtonCallUs from "~/components/ButtonCallUs.astro";
 import Article from "~/components/Article.astro";
 
 // Images
-import PizzaHero from "~/assets/images/pizza-hero.png";
+import Logo from "~/assets/images/whatsapp_image_2025-12-12_at_11.12.35_am.jpeg";
 ---
 
 <Layout>
 	<Section class:list={"bg-white"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
+				<Badge title="🍽️ About Us" />
+				<h1 class="font-black text-brand-dark">Fresh, Quality, Gourmet</h1>
 
 				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
+					Experience gourmet dining at its finest with our made-to-order sandwiches, hearty homemade soups,
+					and fresh salads. We use clean, quality ingredients to create unforgettable meals every single day.
 				</p>
 
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
+				<span class="text-brand-brown font-medium">✔ Open All Day, Every Day</span>
 
 				<div class="mt-8 flex items-center gap-x-8">
 					<Button url="/book">Book now</Button>
@@ -34,11 +33,11 @@ import PizzaHero from "~/assets/images/pizza-hero.png";
 			</div>
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
+					class:list={"mx-auto rounded-2xl shadow-xl"}
+					src={Logo}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="A description of my image."
+					alt="Gourmet Deli & Catering Company Logo"
 					loading={"eager"}
 					fetchpriority={"high"}
 				/>
@@ -48,40 +47,41 @@ import PizzaHero from "~/assets/images/pizza-hero.png";
 
 	<Section class:list={'bg-white'}>
 		<Article>
-			<h2>Welcome to AstroPie</h2>
+			<h2>Welcome to Gourmet Deli & Catering Company</h2>
 			<p>
-				Nestled in the heart of the city, <strong>AstroPie</strong> offers an authentic Italian dining experience
-				like no other. From the moment you step through our doors, you'll be transported to the vibrant streets of
-				Italy, where good food and great company are at the center of life.
+				Located in Ontario, <strong>Gourmet Deli & Catering Company</strong> offers an exceptional dining experience
+				featuring fresh, made-to-order gourmet food. From the moment you taste our creations, you'll understand our
+				commitment to quality ingredients and exceptional flavor.
 			</p>
 
 			<h3>Our Story</h3>
 			<p>
-				Founded in <em>1998</em>, our family-owned restaurant has always been a labor of love. Inspired by the
-				recipes passed down through generations, we bring the <u>rich culinary heritage</u> of Italy to your plate.
-				Every dish tells a story, and every meal is a celebration of flavor.
+				Our deli has always been built on a foundation of quality and care. Using "clean" food items and the finest
+				ingredients, we create <u>gourmet sandwiches, hearty soups, and fresh salads</u> that satisfy every palate.
+				Every dish is crafted with attention to detail and a passion for great food.
 			</p>
 
 			<h3>Our Philosophy</h3>
-			<blockquote>"The secret ingredient is always love."</blockquote>
+			<blockquote>"Quality ingredients make quality food."</blockquote>
 			<p>
-				At AstroPie, we believe in the simple joy of fresh ingredients, time-honored techniques, and a
-				passion for creating memorable meals. From our hand-rolled pasta to our wood-fired pizzas, every bite is
-				crafted with care.
+				At Gourmet Deli, we believe in the importance of fresh, clean ingredients and made-to-order preparation.
+				From our extensive soup selection featuring almost 100 varieties to our gourmet burgers and sandwiches,
+				every item is made with care and expertise.
 			</p>
 
 			<h4>What Makes Us Special?</h4>
 			<ul>
-				<li><strong>Authenticity:</strong> Traditional recipes, just like Nonna used to make.</li>
-				<li><strong>Fresh Ingredients:</strong> Locally sourced produce and imported Italian staples.</li>
-				<li><strong>Warm Atmosphere:</strong> A place where everyone feels like family.</li>
+				<li><strong>Variety:</strong> Almost 100 soup varieties and extensive menu options.</li>
+				<li><strong>Quality:</strong> Clean ingredients and made-to-order preparation.</li>
+				<li><strong>Inclusivity:</strong> Gluten-free, vegan, vegetarian, and traditional options.</li>
+				<li><strong>Catering:</strong> Full-service catering for any event or occasion.</li>
 			</ul>
 
 			<h3>Join Us</h3>
 			<p>
-				Whether you're celebrating a special occasion or simply indulging in the pleasures of Italian cuisine, <strong
-					>AstroPie</strong
-				> is the perfect destination. <em>Come for the food, stay for the memories.</em>
+				Whether you're stopping by for breakfast, lunch, or dinner, or planning a catered event, <strong
+					>Gourmet Deli & Catering Company</strong
+				> is here to serve you. <em>Fresh, delicious, made just for you.</em>
 			</p>
 		</Article>
 	</Section>

@@ -1,27 +1,32 @@
 // Global variables
 export const siteLang = "en-US";
-export const siteCurrency = "USD";
-export const siteDomain = "astropie.com";
-export const siteName = "AstroPie";
-export const siteSlogan = "The best pies in the galaxy!";
-export const themeColor = "#FF0000";
+export const siteCurrency = "CAD";
+export const siteDomain = "gourmetdeli.com";
+export const siteName = "Gourmet Deli & Catering Company";
+export const siteSlogan = "Savoury Sandwiches, Hearty Soups & Fresh Salads";
+export const themeColor = "#8B4E2C";
 
 export const phone = {
-	href: "tel:+123456789",
-	label: "(123) 456-789",
+	href: "tel:+15192047252",
+	label: "519-204-7252",
+};
+
+export const phoneMobile = {
+	href: "tel:+15197771065",
+	label: "519-777-1065",
 };
 
 export const email = {
-	href: "mailto:info@astropie.com",
-	label: "info@astropie.com",
+	href: "mailto:info@thegourmetdeli.ca",
+	label: "info@thegourmetdeli.ca",
 };
 
 export const address = {
-	street: "1234 Space Street",
-	city: "Galaxy City",
-	zip: "12345",
-	state: "Milky Way",
-	country: "Space",
+	street: "",
+	city: "",
+	zip: "",
+	state: "Ontario",
+	country: "Canada",
 };
 
 export const socialMedia = {
@@ -48,11 +53,18 @@ export const socialMedia = {
 };
 
 export const hours = {
-	monday: "9:00 - 17:00",
-	tuesday: "9:00 - 17:00",
-	wednesday: "9:00 - 17:00",
-	thursday: "9:00 - 17:00",
-	friday: "9:00 - 17:00",
-	saturday: "9:00 - 17:00",
-	sunday: "Closed",
+	monday: "Open All Day",
+	tuesday: "Open All Day",
+	wednesday: "Open All Day",
+	thursday: "Open All Day",
+	friday: "Open All Day",
+	saturday: "Open All Day",
+	sunday: "Open All Day",
+};
+
+export const cateringInfo = {
+	hotline: "519-204-7252",
+	afterHours: "519-777-1065 (Thomas)",
+	minimumDelivery: "$150 before taxes",
+	breakfastUntil: "11:30 AM",
 };

@@ -3,8 +3,14 @@
 
 @theme {
 	--font-inter: "Inter", "sans-serif";
-	--color-brand-green: #157f71;
-	--color-brand-red: #db1d00;
+	--color-brand-brown: #8B4E2C;
+	--color-brand-rust: #A0583C;
+	--color-brand-yellow: #F9D71C;
+	--color-brand-gold: #FFB81C;
+	--color-brand-cream: #F5E6D3;
+	--color-brand-dark: #4A2C1F;
+	--color-brand-green: #2D5016;
+	--color-brand-red: #8B4E2C;
 }
 
 @utility container {
@@ -178,8 +184,16 @@ p {
 	@apply bg-brand-red hover:bg-brand-red/80 text-white focus-visible:outline-brand-red;
 }
 
+.button-brown {
+	@apply bg-brand-brown hover:bg-brand-brown/80 text-white focus-visible:outline-brand-brown;
+}
+
+.button-yellow {
+	@apply bg-brand-yellow hover:bg-brand-yellow/90 text-brand-dark focus-visible:outline-brand-yellow;
+}
+
 .menu-item-highlighted.menu-item-highlighted {
-	@apply text-white bg-brand-green px-4 rounded-full py-1.5 hover:bg-brand-green/80 hover:text-white;
+	@apply text-white bg-brand-brown px-4 rounded-full py-1.5 hover:bg-brand-brown/80 hover:text-white;
 }
 
 .menu-item-active.menu-item-highlighted {
@@ -187,7 +201,7 @@ p {
 }
 
 .menu-item-active:not(.menu-item-highlighted) {
-	@apply text-brand-green font-bold;
+	@apply text-brand-brown font-bold;
 }
 
 [x-cloak] {
@@ -202,7 +216,7 @@ section.bg-brand-red + section.bg-brand-red > .container {
 
 input,
 textarea {
-	@apply border border-gray-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-brand-green;
+	@apply border border-gray-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-brand-brown;
 }
 
 label {
@@ -211,7 +225,7 @@ label {
 
 /* Swiper */
 .swiper-pagination-bullet-active.swiper-pagination-bullet-active {
-	@apply bg-brand-red;
+	@apply bg-brand-brown;
 }
 
 /* inter-300 - latin */

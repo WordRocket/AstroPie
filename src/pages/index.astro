@@ -9,46 +9,71 @@ import ButtonCallUs from "~/components/ButtonCallUs.astro";
 import Grid from "~/components/Grid.astro";
 import Heading from "~/components/Heading.astro";
 import WideImage from "~/components/WideImage.astro";
-import ReviewSlider from "~/components/ReviewSlider.astro";
 
 // Images
-import PizzaHero from "~/assets/images/pizza-hero.png";
-import Pizza from "~/assets/images/pizza.png";
-import Spaghetti from "~/assets/images/spaghetti.png";
-import Fish from "~/assets/images/fish.png";
-import DecorativeImage from "~/assets/images/pexels-shvetsa-5953523.jpg";
-import reviewAuthors from "~/assets/images/review-authors.png";
-import Dessert from "~/assets/images/dessert.png";
-import Mussels from "~/assets/images/mussels2.png";
+import Logo from "~/assets/images/whatsapp_image_2025-12-12_at_11.12.35_am.jpeg";
+import MenuClassicDeli from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(1).jpeg";
+import MenuGourmetSandwiches from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(2).jpeg";
+import MenuBreakfast from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am_(3).jpeg";
+import MenuBurgers from "~/assets/images/whatsapp_image_2025-12-12_at_11.11.25_am.jpeg";
+
+import { cateringInfo } from "~/data/config";
 ---
 
-<Layout title="Home" pageTitle="Home" description="Welcome to our restaurant!">
-	<Section class:list={"bg-white"}>
+<Layout
+	title="Gourmet Deli & Catering - Fresh Sandwiches, Soups & Salads"
+	pageTitle="Gourmet Deli & Catering Company | Ontario"
+	description="Experience the finest gourmet sandwiches, hearty soups, and fresh salads. Full-service catering available. Using clean ingredients for made-to-order quality food.">
+
+	<!-- Hero Section -->
+	<Section class:list={"bg-gradient-to-br from-brand-cream via-white to-brand-cream/50"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
+				<Badge title="🍽️ Gourmet Quality" />
+				<h1 class="font-black text-brand-dark !leading-tight">Fresh, Delicious, Made Just for You</h1>
 
-				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
+				<p class="text-xl text-gray-700">
+					Experience gourmet dining with our made-to-order sandwiches, hearty homemade soups, and fresh salads.
+					We use clean, quality ingredients to create unforgettable meals every single day.
 				</p>
 
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
+				<div class="not-prose space-y-3 my-6">
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">🥪</span>
+						<span class="text-brand-brown font-semibold text-lg">Savoury Gourmet Sandwiches</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">🍲</span>
+						<span class="text-brand-brown font-semibold text-lg">Almost 100 Soup Varieties</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">🥗</span>
+						<span class="text-brand-brown font-semibold text-lg">Fresh Traditional & Gourmet Salads</span>
+					</div>
+					<div class="flex items-center gap-3">
+						<span class="text-2xl">🍔</span>
+						<span class="text-brand-brown font-semibold text-lg">Gourmet Burgers & Hot Dogs</span>
+					</div>
+				</div>
 
-				<div class="mt-8 flex items-center gap-x-8">
-					<Button url="/book">Book now</Button>
+				<div class="mt-8 flex flex-wrap items-center gap-4">
+					<a href="/menu" class="button button-brown inline-flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+							<path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+						</svg>
+						View Full Menu
+					</a>
 					<ButtonCallUs />
 				</div>
 			</div>
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
+					class:list={"mx-auto rounded-2xl shadow-2xl"}
+					src={Logo}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="A description of my image."
+					alt="Gourmet Deli & Catering Company Logo"
 					loading={"eager"}
 					fetchpriority={"high"}
 				/>
@@ -56,91 +81,83 @@ import Mussels from "~/assets/images/mussels2.png";
 		</Hero>
 	</Section>
 
-	<WideImage image={DecorativeImage} alt="Just an image" class:list={"aspect-video lg:aspect-[16/6]"} />
-
+	<!-- All Day Specials Section -->
 	<Section class:list={"bg-white"}>
 		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Our dishes</h2>
-			<p slot="heading-content">
-				Explore our selection of authentic Italian dishes, from classic pizzas to homemade pastas.
+			<h2 slot="heading-title" class="font-black text-brand-brown h2">All Day Every Day Specials</h2>
+			<p slot="heading-content" class="text-xl">
+				From breakfast to dinner, we serve fresh, delicious meals all day long. Every dish is crafted with care
+				using quality ingredients.
 			</p>
 		</Heading>
 
 		<Grid>
 			<div slot="grid-content-1">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Pizza}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
+				<div class="flex flex-col items-center text-center">
+					<div class="w-full h-64 bg-gradient-to-br from-brand-yellow/20 to-brand-gold/20 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<span class="text-8xl">🥪</span>
+					</div>
+					<h3 class="h4 mt-0 font-black text-brand-dark">Savoury Sandwiches</h3>
+					<p class="text-gray-600 text-lg px-4">
+						Using "clean" food items to produce the best quality made-to-order gourmet sandwiches.
+						From classic delis to innovative creations.
 					</p>
 				</div>
 			</div>
 
 			<div slot="grid-content-2">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Spaghetti}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
+				<div class="flex flex-col items-center text-center">
+					<div class="w-full h-64 bg-gradient-to-br from-brand-rust/20 to-brand-brown/20 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<span class="text-8xl">🍲</span>
+					</div>
+					<h3 class="h4 mt-0 font-black text-brand-dark">Hearty Soups</h3>
+					<p class="text-gray-600 text-lg px-4">
+						Our in-house chef produces almost a hundred varieties of from-scratch creations to satisfy your soul.
+						Made fresh daily with love.
 					</p>
 				</div>
 			</div>
 
 			<div slot="grid-content-3">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Fish}
-						formats={["avif", "webp"]}
-						alt="A description of my image."
-					/>
-					<h3 class="h4 mt-0 font-black">Pasta &amp; Spaghetti</h3>
-					<p>
-						Pasta is a staple of Italian cuisine, with a rich history dating back centuries. It comes in
-						various shapes and sizes, each suited to different sauces and preparations.
+				<div class="flex flex-col items-center text-center">
+					<div class="w-full h-64 bg-gradient-to-br from-brand-green/20 to-emerald-200/40 rounded-2xl flex items-center justify-center mb-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+						<span class="text-8xl">🥗</span>
+					</div>
+					<h3 class="h4 mt-0 font-black text-brand-dark">Fresh Salads</h3>
+					<p class="text-gray-600 text-lg px-4">
+						Taking every palate into consideration - gluten-free, vegan, vegetarian, and more.
+						Traditional and gourmet options designed for everyone.
 					</p>
 				</div>
 			</div>
 		</Grid>
 	</Section>
 
-	<Section class:list={"bg-white"}>
+	<!-- Menu Showcase Section -->
+	<Section class:list={"bg-gradient-to-br from-brand-cream/30 to-white"}>
 		<Hero>
-			<div slot="hero-content-left" class="prose lg:order-2">
-				<h1 class="font-black">Pizza</h1>
+			<div slot="hero-content-left" class="prose max-w-none lg:order-2">
+				<Badge title="🍔 Gourmet Burgers" />
+				<h2 class="font-black text-brand-dark h2">Our Signature Burgers</h2>
 
-				<p>
-					Pizza is a beloved dish that originated in Italy and has since become a global sensation. Its
-					versatility allows for endless combinations of toppings, from classic margherita with fresh
-					tomatoes, mozzarella, and basil, to more adventurous options like barbecue chicken or vegan cheese.
+				<p class="text-lg text-gray-700">
+					Sink your teeth into our gourmet burger selection featuring premium ingredients and
+					creative flavor combinations. From classic beef patties to specialty options, each burger
+					is crafted to perfection.
 				</p>
 
-				<p>
-					Whether enjoyed at a cozy pizzeria or delivered to your doorstep, pizza brings people together and
-					satisfies cravings like no other food. Beyond its delicious taste, pizza also holds cultural
-					significance. It is often associated with gatherings, celebrations, and comfort.
+				<p class="text-lg text-gray-700">
+					Choose from our signature creations like the Reuben Burger with corned beef and Russian dressing,
+					or the Teriyaki Burger with mushrooms and mozzarella. Every bite is a flavor explosion.
 				</p>
 
-				<div class="mt-8">
-					<Button url="/menu">
+				<div class="mt-8 not-prose">
+					<a href="/menu" class="button button-brown inline-flex items-center gap-2">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 20 20"
 							fill="currentColor"
-							class="size-5 inline-block"
+							class="size-5"
 							aria-hidden="true"
 						>
 							<path
@@ -148,75 +165,110 @@ import Mussels from "~/assets/images/mussels2.png";
 								d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
 								clip-rule="evenodd"></path>
 						</svg>
-						View menu
-					</Button>
+						Explore Our Menu
+					</a>
 				</div>
 			</div>
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
+					class:list={"mx-auto rounded-2xl shadow-xl"}
+					src={MenuBurgers}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="A description of my image."
+					alt="Gourmet Burger Menu"
 				/>
 			</div>
 		</Hero>
 	</Section>
 
+	<!-- Breakfast Section -->
 	<Section class:list={"bg-white"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge color="red" title="delicious" />
-				<h2 class="font-black h2 !my-4">Plate of the week</h2>
+				<Badge title="☀️ Breakfast" />
+				<h2 class="font-black h2 !my-4 text-brand-dark">Start Your Day Right</h2>
 
-				<span class="text-brand-red text-2xl font-bold italic">Fresh Mussels!</span>
+				<span class="text-brand-yellow text-2xl font-bold">Breakfast served until 11:30 AM</span>
 
-				<p>
-					Our plate of the week is a delicious dish that changes every week. This week, we're featuring fresh
-					mussels cooked in a white wine and garlic sauce, served with a side of crispy fries. Don't miss out
-					on this limited-time offer!
+				<p class="text-lg text-gray-700">
+					Wake up to our delicious breakfast offerings. From hearty breakfast bowls to classic sandwiches,
+					we have everything you need to fuel your morning. Choose from our Corned Beef Slammer, Breakfast Bowl,
+					or signature breakfast burritos.
 				</p>
 
-				<div class="mt-8">
-					<Button color="red" url="/book">Book now</Button>
+				<p class="text-lg text-gray-700">
+					All breakfast items are made fresh to order using quality ingredients. Start your day with
+					a satisfying meal that will keep you energized.
+				</p>
+
+				<div class="mt-8 not-prose">
+					<a href="/menu" class="button button-yellow inline-flex items-center gap-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+							<path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+						</svg>
+						View Breakfast Menu
+					</a>
 				</div>
 			</div>
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto"}
-					src={Mussels}
+					class:list={"mx-auto rounded-2xl shadow-xl"}
+					src={MenuBreakfast}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="A description of my image."
+					alt="Breakfast Menu"
 				/>
 			</div>
 		</Hero>
 	</Section>
 
-	<!-- Reviews -->
-	<Section class:list={"bg-brand-red/20 relative"}>
+	<!-- Catering Section -->
+	<Section class:list={"bg-gradient-to-br from-brand-brown/10 via-brand-cream/30 to-brand-yellow/10 relative"}>
 		<div class="py-16">
-			<Hero>
-				<div slot="hero-content-left" class="prose max-w-none order-2">
-					<div class="text-center not-prose">
-						<Badge color="white" title="reviews" />
-					</div>
-					<h2 slot="heading-title" class="font-black h4 text-center mt-0 mb-4">What our customers say...</h2>
-					<div slot="heading-content">
-						<p class="text-center">
-							Don't just take our word for it. Read what our customers have to say about their dining
-							experience at our restaurant.
-						</p>
+			<div class="text-center max-w-4xl mx-auto">
+				<Badge title="🎉 Catering Services" />
+				<h2 class="font-black h2 text-brand-dark mt-4 mb-6">Full-Service Catering Available</h2>
+				<p class="text-xl text-gray-700 mb-8">
+					Let us cater your next event with our delicious gourmet offerings. From corporate lunches to
+					special celebrations, we provide exceptional food and service for any occasion.
+				</p>
 
-						<ReviewSlider />
+				<div class="grid md:grid-cols-2 gap-8 text-left mb-12">
+					<div class="bg-white rounded-2xl p-8 shadow-lg">
+						<div class="flex items-start gap-4">
+							<div class="text-4xl">📞</div>
+							<div>
+								<h3 class="font-bold text-2xl text-brand-dark mb-2">Catering Hotline</h3>
+								<a href="tel:+15192047252" class="text-2xl font-bold text-brand-brown hover:text-brand-rust transition-colors">
+									{cateringInfo.hotline}
+								</a>
+								<p class="text-gray-600 mt-2">Call us during business hours</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white rounded-2xl p-8 shadow-lg">
+						<div class="flex items-start gap-4">
+							<div class="text-4xl">📱</div>
+							<div>
+								<h3 class="font-bold text-2xl text-brand-dark mb-2">After Hours</h3>
+								<a href="tel:+15197771065" class="text-2xl font-bold text-brand-brown hover:text-brand-rust transition-colors">
+									519-777-1065
+								</a>
+								<p class="text-gray-600 mt-2">Call Thomas directly</p>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div slot="hero-content-right">
-					<Picture src={reviewAuthors} alt="Review authors" class="w-full h-auto" />
+				<div class="bg-white rounded-2xl p-8 shadow-lg inline-block">
+					<p class="text-lg text-gray-700 mb-2">
+						<span class="font-bold text-brand-dark">Minimum for delivery:</span>
+						<span class="ml-2 text-2xl font-bold text-brand-brown">{cateringInfo.minimumDelivery}</span>
+					</p>
 				</div>
-			</Hero>
+			</div>
 		</div>
 
 		<svg
@@ -243,73 +295,72 @@ import Mussels from "~/assets/images/mussels2.png";
 		</svg>
 	</Section>
 
-	<!-- Desserts -->
+	<!-- Sandwich Showcase -->
 	<Section class:list={"bg-white"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none order-2">
-				<Badge title="dolce" />
-				<h2 slot="heading-title" class="font-black text-brand-green h2 !my-4">Desserts</h2>
-				<div slot="heading-content">
-					<p>
-						Indulge in our selection of sweet treats, from classic tiramisu to decadent chocolate cake. Our
-						desserts are the perfect way to end your meal on a high note.
+				<Badge title="🥖 Classic Deli" />
+				<h2 class="font-black text-brand-dark h2 !my-4">Traditional & Gourmet Sandwiches</h2>
+				<div>
+					<p class="text-lg text-gray-700">
+						Choose from our extensive selection of classic deli favorites and innovative gourmet creations.
+						From the Brooklyn Hoagie with black forest ham to the Mediterranean with bruschetta and feta,
+						every sandwich is a masterpiece.
 					</p>
 
-					<p>
-						Experience the taste of Italy with our authentic dishes made from the finest ingredients.
-						Indulge in our wide variety of pizzas, pastas, and desserts, all crafted with love and
-						tradition. Whether you're dining in or taking out, we promise a memorable culinary experience.
+					<p class="text-lg text-gray-700">
+						We offer options for every dietary preference including vegetarian, vegan, and gluten-free choices.
+						Each sandwich is made to order ensuring the freshest, most delicious experience possible.
 					</p>
 
-					<div class="mt-8">
-						<Button url="/menu">See our menu</Button>
+					<div class="mt-8 not-prose">
+						<a href="/menu" class="button button-brown">
+							View Complete Menu
+						</a>
 					</div>
 				</div>
 			</div>
 
 			<div slot="hero-content-right">
 				<Picture
-					class:list={"mx-auto"}
-					src={Dessert}
+					class:list={"mx-auto rounded-2xl shadow-xl"}
+					src={MenuClassicDeli}
 					height={600}
 					formats={["avif", "webp"]}
-					alt="A description of my image."
+					alt="Classic Deli Sandwich Menu"
 				/>
 			</div>
 		</Hero>
 	</Section>
 
-	<!-- Contact -->
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none">
-				<Badge color="red" title="benvenuto" />
-				<h2 slot="heading-title" class="font-black text-brand-red h2 !my-4">Drop by and say hello</h2>
-				<div slot="heading-content">
-					<p>
-						We're located in the heart of the city, just a stone's throw away from the main square. Our
-						restaurant is the perfect place to enjoy a delicious meal with friends and family.
-					</p>
+	<!-- Final CTA Section -->
+	<Section class:list={"bg-gradient-to-br from-brand-brown to-brand-rust text-white"}>
+		<div class="text-center max-w-4xl mx-auto py-16">
+			<h2 class="font-black h2 mb-6">Ready to Experience Gourmet Quality?</h2>
+			<p class="text-xl mb-8 text-white/90">
+				Visit us today or call to place your order. We're here to serve you delicious, made-to-order meals
+				all day, every day.
+			</p>
 
-					<span class="text-brand-red font-medium">
-						✔ We also do take-away, so you can enjoy your food at home
-					</span>
-
-					<div class="mt-8">
-						<Button color="red" url="/book">Book a table</Button>
-					</div>
-				</div>
+			<div class="flex flex-wrap gap-4 justify-center items-center mb-8">
+				<a href="tel:+15192047252" class="button bg-white text-brand-brown hover:bg-gray-100 inline-flex items-center gap-2">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+					</svg>
+					519-204-7252
+				</a>
+				<a href="/menu" class="button button-yellow">
+					Browse Menu
+				</a>
+				<a href="/contact" class="button bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-brown">
+					Contact Us
+				</a>
 			</div>
 
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Dessert}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-				/>
+			<div class="text-white/80 text-sm">
+				<p>Open All Day, Every Day</p>
+				<p>WhatsApp Available: 519-204-7252</p>
 			</div>
-		</Hero>
+		</div>
 	</Section>
 </Layout>
