@@ -3,13 +3,13 @@ import { menuMain } from "~/data/menus";
 const currentYear = new Date().getFullYear();
 import { siteName } from "~/data/config";
 import { Image } from "astro:assets";
-import FooterLogo from "~/assets/whatsapp_image_2025-12-12_at_11.12.35_am_(1).jpeg";
+import FooterLogo from "~/assets/logo copy.png";
 ---
 
 <footer class="bg-brand-dark text-white">
 	<div class="container pt-16 pb-8">
 		<div class="flex justify-center">
-			<Image src={FooterLogo} alt="Gourmet Deli & Catering Company - Since 1999" width={250} height={100} class="h-24 w-auto" />
+			<Image src={FooterLogo} alt="Gourmet Deli & Catering Company" width={250} height={100} class="h-24 w-auto" />
 		</div>
 		<nav class="flex flex-col sm:flex-row items-center justify-center gap-x-12 gap-y-3 font-medium mt-6" aria-label="Footer">
 			{
